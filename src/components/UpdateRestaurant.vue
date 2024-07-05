@@ -1,13 +1,15 @@
 <template>
-  <div class="flex flex-col items-center h-screen pt-10">
+  <div>
     <Header />
-    <h1 class="text-4xl font-medium mb-8">Update Restaurant</h1>
-    <input type="text" v-model="name" placeholder="Name" class="p-4 mb-4 w-72 border rounded" />
-    <input type="text" v-model="location" placeholder="Location" class="p-4 mb-4 w-72 border rounded" />
-    <input type="text" v-model="price_range" placeholder="Price Range" class="p-4 mb-4 w-72 border rounded" />
-    <button @click="updateRestaurant" class="p-4 w-72 bg-green-500 text-white rounded hover:bg-green-600">
-      Update
-    </button>
+    <div class="flex flex-col items-center h-screen pt-10">
+      <h1 class="text-4xl font-medium mb-8">Update Restaurant</h1>
+      <input type="text" v-model="name" placeholder="Name" class="p-4 mb-4 w-72 border rounded" />
+      <input type="text" v-model="location" placeholder="Location" class="p-4 mb-4 w-72 border rounded" />
+      <input type="text" v-model="price_range" placeholder="Price Range" class="p-4 mb-4 w-72 border rounded" />
+      <button @click="updateRestaurant" class="p-4 w-72 bg-green-500 text-white rounded hover:bg-green-600">
+        Update
+      </button>
+    </div>
   </div>
 </template>
 
@@ -49,7 +51,6 @@ export default {
         price_range.value = restaurant.price_range;
       } catch (error) {
         console.error('Error fetching restaurant:', error);
-        alert('Failed to fetch restaurant');
       }
     };
 
@@ -72,11 +73,9 @@ export default {
           }
         });
         console.log(response);
-        alert('Restaurant updated successfully');
-        router.push({ name: 'ListRestaurant' });
+        router.push({ name: 'ListRestaurants' });
       } catch (error) {
         console.error('Error updating restaurant:', error);
-        alert('Failed to update restaurant');
       }
     };
 
@@ -88,4 +87,3 @@ export default {
   }
 };
 </script>
-

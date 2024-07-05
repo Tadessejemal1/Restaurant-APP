@@ -1,7 +1,8 @@
 <template>
+  <Header />
   <div class="flex flex-col items-center pt-10">
-    <Header />
-    <h1 class="text-4xl font-medium mb-8">List of Restaurants</h1>
+
+    <h1 class="text-4xl font-medium mb-8 mt-4">List of Restaurants</h1>
     <table class="w-4/5 border-collapse">
       <thead>
         <tr>
@@ -68,7 +69,7 @@ export default {
             'Authorization': `Bearer ${token}`
           }
         });
-        fetchRestaurants(); // Refresh the list after deletion
+        fetchRestaurants();
         alert('Restaurant deleted successfully');
       } catch (error) {
         console.error('Error deleting restaurant:', error);
@@ -84,55 +85,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 40px;
-}
-
-h1 {
-  font-size: 2.6rem;
-  font-weight: 500;
-  margin-bottom: 2rem;
-}
-
-table {
-  width: 80%;
-  border-collapse: collapse;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
-
-button {
-  margin-right: 5px;
-  padding: 5px 10px;
-  border: none;
-  background-color: #4CAF50;
-  color: white;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-button:last-child {
-  background-color: #f44336;
-}
-
-button:last-child:hover {
-  background-color: #d32f2f;
-}
-</style>

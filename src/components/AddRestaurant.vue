@@ -1,19 +1,22 @@
 <template>
-  <div class="flex flex-col items-center h-screen pt-10">
+  <div>
     <Header />
-    <h1 class="text-4xl font-medium mb-8">Add Restaurant</h1>
-    <input type="text" v-model="name" placeholder="Name" class="p-4 mb-4 w-72 border rounded" />
-    <input type="text" v-model="location" placeholder="Location" class="p-4 mb-4 w-72 border rounded" />
-    <input type="text" v-model="price_range" placeholder="Price Range" class="p-4 mb-4 w-72 border rounded" />
-    <button @click="addRestaurant" class="p-4 w-72 bg-green-500 text-white rounded hover:bg-green-600">
-      Add
-    </button>
+    <div class="flex flex-col items-center h-screen pt-10">
+      <h1 class="text-4xl font-medium mb-8">Add Restaurant</h1>
+      <input type="text" v-model="name" placeholder="Name" class="p-4 mb-4 w-72 border rounded" />
+      <input type="text" v-model="location" placeholder="Location" class="p-4 mb-4 w-72 border rounded" />
+      <input type="text" v-model="price_range" placeholder="Price Range" class="p-4 mb-4 w-72 border rounded" />
+      <button @click="addRestaurant" class="p-4 w-72 bg-green-500 text-white rounded hover:bg-green-600">
+        Add
+      </button>
+    </div>
   </div>
 </template>
 
 <script>
 import { ref } from 'vue';
 import axios from 'axios';
+import { useRouter } from 'vue-router';
 import Header from './Header.vue';
 
 export default {
@@ -25,6 +28,7 @@ export default {
     const name = ref('');
     const location = ref('');
     const price_range = ref('');
+    const router = useRouter();
 
     const addRestaurant = async () => {
       try {
@@ -52,7 +56,7 @@ export default {
           }
         );
         console.log(response);
-        alert('Restaurant added successfully');
+        router.push({ name: 'ListRestaurants' });
       } catch (error) {
         console.error('Error adding restaurant:', error);
         alert('Failed to add restaurant');
@@ -64,24 +68,3 @@ export default {
 };
 </script>
 
-<style scoped>
-.add {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  padding-top: 40px;
-}
-
-h1 {
-  font-size: 2.6rem;
-  font-weight: 500;
-  margin-bottom: 2rem;
-}
-
-.add input {
-  padding: 1rem;
-  margin-bottom: 1rem;
-  width: 300px;
-}
-</style>
