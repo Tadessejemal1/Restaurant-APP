@@ -12,8 +12,8 @@
       <router-link to="/sign-up" class="hover:underline font-bold text-lg">Sign Up</router-link> -->
       <router-link to="/add" class="hover:underline font-bold text-lg">Add Restaurant</router-link>
       <router-link to="/list" class="hover:underline font-bold text-lg">List Restaurants</router-link>
-      <router-link to="/update/:id" class="hover:underline font-bold text-lg">Update Restaurant</router-link>
-      <router-link :to="{ name: 'UpdateRestaurant', params: { id: 1 } }" class="hover:underline font-bold text-lg">Logout</router-link>
+      <router-link :to="{ name: 'UpdateRestaurant', params: { id: 1 } }" class="hover:underline font-bold text-lg">Update Restaurant</router-link>
+      <router-link to="/logout" class="hover:underline font-bold text-lg">Logout</router-link>
     </nav>
     <transition name="slide-fade">
       <div v-if="isMenuOpen" class="fixed inset-0 bg-gray-800 bg-opacity-75 z-50" @click="toggleMenu">
@@ -60,7 +60,7 @@
               </svg>
               List Restaurants
             </router-link>
-            <router-link :to="{ name: 'UpdateRestaurant', params: { id: 1 } }" class="block text-gray-800 hover:text-blue-500 flex items-center font-bold text-lg border-b border-gray-200 pb-2">
+            <router-link to="/update/:id" class="block text-gray-800 hover:text-blue-500 flex items-center font-bold text-lg border-b border-gray-200 pb-2">
               <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13 10V8h-2v2H8v2h3v2h2v-2h2v-2h-2zm-1-6V3a1 1 0 00-2 0v1H8a1 1 0 000 2h2v2h2V6h2a1 1 0 000-2h-2zM6 10a1 1 0 011-1h2v2H8a1 1 0 00-1-1zm4 4a1 1 0 010-2h2v2H8a1 1 0 010-2z"></path>
               </svg>

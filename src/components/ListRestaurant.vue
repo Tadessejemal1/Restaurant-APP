@@ -1,29 +1,32 @@
 <template>
-  <Header />
-  <div class="flex flex-col items-center pt-10">
-
-    <h1 class="text-4xl font-medium mb-8 mt-4">List of Restaurants</h1>
-    <table class="w-4/5 border-collapse">
-      <thead>
-        <tr>
-          <th class="border p-2 bg-gray-200 font-bold">Name</th>
-          <th class="border p-2 bg-gray-200 font-bold">Location</th>
-          <th class="border p-2 bg-gray-200 font-bold">Price Range</th>
-          <th class="border p-2 bg-gray-200 font-bold">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="restaurant in restaurants" :key="restaurant.id" class="border-b">
-          <td class="border p-2">{{ restaurant.name }}</td>
-          <td class="border p-2">{{ restaurant.location }}</td>
-          <td class="border p-2">{{ restaurant.price_range }}</td>
-          <td class="border p-2">
-            <button @click="editRestaurant(restaurant.id)" class="mr-2 p-2 bg-green-500 text-white rounded hover:bg-green-600">Edit</button>
-            <button @click="deleteRestaurant(restaurant.id)" class="p-2 bg-red-500 text-white rounded hover:bg-red-600">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div>
+    <Header />
+    <div class="flex flex-col items-center pt-10 w-full">
+      <h1 class="text-4xl font-medium mb-8 mt-4">List of Restaurants</h1>
+      <div class="overflow-x-auto w-4/5">
+        <table class="min-w-full border-collapse">
+          <thead>
+            <tr>
+              <th class="border p-2 bg-gray-200 font-bold text-center">Name</th>
+              <th class="border p-2 bg-gray-200 font-bold text-center">Location</th>
+              <th class="border p-2 bg-gray-200 font-bold text-center">Price Range($)</th>
+              <th class="border p-2 bg-gray-200 font-bold text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="restaurant in restaurants" :key="restaurant.id" class="border-b">
+              <td class="border p-2 text-center">{{ restaurant.name }}</td>
+              <td class="border p-2 text-center">{{ restaurant.location }}</td>
+              <td class="border p-2 text-center">{{ restaurant.price_range }}</td>
+              <td class="border p-2 text-center">
+                <button @click="editRestaurant(restaurant.id)" class="mr-2 p-2 bg-green-500 text-white rounded hover:bg-green-600">Edit</button>
+                <button @click="deleteRestaurant(restaurant.id)" class="p-2 bg-red-500 text-white rounded hover:bg-red-600">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -53,7 +56,6 @@ export default {
         restaurants.value = response.data;
       } catch (error) {
         console.error('Error fetching restaurants:', error);
-        alert('Failed to fetch restaurants');
       }
     };
 
