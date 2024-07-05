@@ -1,9 +1,9 @@
 <template>
-    <div class="logout">
-      <h1>Logout</h1>
-      <button @click="logout">Logout</button>
-    </div>
-  </template>
+  <div class="flex flex-col items-center justify-center h-screen bg-gray-100">
+    <h1 class="text-4xl font-medium mb-8">Logout</h1>
+    <button @click="logout" class="p-4 w-72 bg-red-500 text-white rounded hover:bg-red-600">Logout</button>
+  </div>
+</template>
   
   <script>
   import { useRouter } from 'vue-router';

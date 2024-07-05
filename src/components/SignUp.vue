@@ -1,13 +1,12 @@
 <template>
-  <!-- <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" /> -->
-   <div class="register">
-    <h1>SignUp</h1>
-    <input type="text" v-model="name" placeholder="Name" />
-    <input type="email" v-model="email" placeholder="Email" />
-    <input type="password" v-model="password" placeholder="Password" />
-    <button @click="signup">SignUp</button>
-    <p class="login">Already have an account? <router-link to="/login">Login</router-link></p>
-   </div>
+  <div class="flex flex-col items-center justify-center h-screen bg-gray-100">
+    <h1 class="text-4xl font-medium mb-8">Sign Up</h1>
+    <input type="text" v-model="name" placeholder="Name" class="p-4 mb-4 w-72 border rounded" />
+    <input type="email" v-model="email" placeholder="Email" class="p-4 mb-4 w-72 border rounded" />
+    <input type="password" v-model="password" placeholder="Password" class="p-4 mb-4 w-72 border rounded" />
+    <button @click="signup" class="p-4 w-72 bg-green-500 text-white rounded hover:bg-green-600">Sign Up</button>
+    <p class="mt-4">Already have an account? <router-link to="/login" class="text-blue-500 hover:underline">Login</router-link></p>
+  </div>
 </template>
 
 <script>

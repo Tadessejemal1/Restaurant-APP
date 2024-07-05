@@ -1,11 +1,13 @@
 <template>
-  <div class="update">
+  <div class="flex flex-col items-center h-screen pt-10">
     <Header />
-    <h1>Update Restaurant</h1>
-    <input type="text" v-model="name" placeholder="Name" />
-    <input type="text" v-model="location" placeholder="Location" />
-    <input type="text" v-model="price_range" placeholder="Price Range" />
-    <button @click="updateRestaurant">Update</button>
+    <h1 class="text-4xl font-medium mb-8">Update Restaurant</h1>
+    <input type="text" v-model="name" placeholder="Name" class="p-4 mb-4 w-72 border rounded" />
+    <input type="text" v-model="location" placeholder="Location" class="p-4 mb-4 w-72 border rounded" />
+    <input type="text" v-model="price_range" placeholder="Price Range" class="p-4 mb-4 w-72 border rounded" />
+    <button @click="updateRestaurant" class="p-4 w-72 bg-green-500 text-white rounded hover:bg-green-600">
+      Update
+    </button>
   </div>
 </template>
 
@@ -87,24 +89,3 @@ export default {
 };
 </script>
 
-<style scoped>
-.update {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  padding-top: 40px;
-}
-
-h1 {
-  font-size: 2.6rem;
-  font-weight: 500;
-  margin-bottom: 2rem;
-}
-
-input {
-  padding: 1rem;
-  margin-bottom: 1rem;
-  width: 300px;
-}
-</style>

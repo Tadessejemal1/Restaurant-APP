@@ -1,9 +1,9 @@
 <template>
-  <div class="login">
-    <h1>Login</h1>
-    <input type="email" v-model="email" placeholder="Email" />
-    <input type="password" v-model="password" placeholder="Password" />
-    <button @click="login">Login</button>
+  <div class="flex flex-col items-center justify-center h-screen bg-gray-100">
+    <h1 class="text-4xl font-medium mb-8">Login</h1>
+    <input type="email" v-model="email" placeholder="Email" class="p-4 mb-4 w-72 border rounded" />
+    <input type="password" v-model="password" placeholder="Password" class="p-4 mb-4 w-72 border rounded" />
+    <button @click="login" class="p-4 w-72 bg-green-500 text-white rounded hover:bg-blue-600">Login</button>
   </div>
 </template>
 

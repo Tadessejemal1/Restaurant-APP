@@ -1,11 +1,13 @@
 <template>
-  <div class="add">
+  <div class="flex flex-col items-center h-screen pt-10">
     <Header />
-    <h1>Add Restaurant</h1>
-    <input type="text" v-model="name" placeholder="Name" />
-    <input type="text" v-model="location" placeholder="Location" />
-    <input type="text" v-model="price_range" placeholder="Price Range" />
-    <button @click="addRestaurant">Add</button>
+    <h1 class="text-4xl font-medium mb-8">Add Restaurant</h1>
+    <input type="text" v-model="name" placeholder="Name" class="p-4 mb-4 w-72 border rounded" />
+    <input type="text" v-model="location" placeholder="Location" class="p-4 mb-4 w-72 border rounded" />
+    <input type="text" v-model="price_range" placeholder="Price Range" class="p-4 mb-4 w-72 border rounded" />
+    <button @click="addRestaurant" class="p-4 w-72 bg-green-500 text-white rounded hover:bg-green-600">
+      Add
+    </button>
   </div>
 </template>
 

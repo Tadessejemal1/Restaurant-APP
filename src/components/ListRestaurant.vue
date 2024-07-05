@@ -1,24 +1,24 @@
 <template>
-  <div class="list">
+  <div class="flex flex-col items-center pt-10">
     <Header />
-    <h1>List of Restaurants</h1>
-    <table>
+    <h1 class="text-4xl font-medium mb-8">List of Restaurants</h1>
+    <table class="w-4/5 border-collapse">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Location</th>
-          <th>Price Range</th>
-          <th>Actions</th>
+          <th class="border p-2 bg-gray-200 font-bold">Name</th>
+          <th class="border p-2 bg-gray-200 font-bold">Location</th>
+          <th class="border p-2 bg-gray-200 font-bold">Price Range</th>
+          <th class="border p-2 bg-gray-200 font-bold">Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="restaurant in restaurants" :key="restaurant.id">
-          <td>{{ restaurant.name }}</td>
-          <td>{{ restaurant.location }}</td>
-          <td>{{ restaurant.price_range }}</td>
-          <td>
-            <button @click="editRestaurant(restaurant.id)">Edit</button>
-            <button @click="deleteRestaurant(restaurant.id)">Delete</button>
+        <tr v-for="restaurant in restaurants" :key="restaurant.id" class="border-b">
+          <td class="border p-2">{{ restaurant.name }}</td>
+          <td class="border p-2">{{ restaurant.location }}</td>
+          <td class="border p-2">{{ restaurant.price_range }}</td>
+          <td class="border p-2">
+            <button @click="editRestaurant(restaurant.id)" class="mr-2 p-2 bg-green-500 text-white rounded hover:bg-green-600">Edit</button>
+            <button @click="deleteRestaurant(restaurant.id)" class="p-2 bg-red-500 text-white rounded hover:bg-red-600">Delete</button>
           </td>
         </tr>
       </tbody>
